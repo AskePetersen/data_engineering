@@ -1,2 +1,4 @@
 yellow_*
 output.csv
+taxi_zone_lookup.csv
+ny_taxi_postgres_data/

@@ -1,0 +1,18 @@
+This is notes on SQL:
+READ UP ON:
+    Joins, Inner Join, Outer Join, Left Join, Right Join
+
+GROUP BY:
+    If multiple events happen on the same days, one can use group by to count
+    the amount of occurences on each day.
+    
+COUNT:
+    Count the number of occurrences of what we query
+
+ORDER BY:
+    Can be used to order dates or counts 
+
+CAST:
+    I believe is used to cast datatypes
+
+
