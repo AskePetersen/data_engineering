@@ -1,0 +1,20 @@
+Terraform_notes:
+
+To make a bucket we gave a service 
+    cloud storage -> storage admin rights
+    bigquery admin
+
+
+Do terraform init to get the provider
+
+With the current files we can do <<terraform plan>> to view the actions that
+    terraform will take. This is a good idea in order to be sure what it will
+    do. We do <<terraform apply>> when we are ready to deploy to gcp
+
+variables.tf is used to set up our dataset by defining variables we can use in
+    main.tf
+main.tf is used to define how we connect with the google cloud platform
+
+In terraform I've learned to setup a dataset in gcp using terraform, how to use
+variables and set main.tf as well as handling credentials in a responsible
+matter

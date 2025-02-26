@@ -1,0 +1,45 @@
+We learn to use compute engine on google cloud.
+We can create a ssh key by 
+    ssh-keygen -t rsa -f ~/.ssh/gcp_key -C aske
+
+We create a VM instance
+    we chose ubuntu with 30 GB
+
+We ssh to the machine by:
+    ssh -i ~/.ssh/gcp_key aske@34.141.83.28
+
+We want anaconda:
+    wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+
+We edit our local config to gcp s.t. we can just type ssh gcp in the terminal:
+    ssh gcp
+
+We can edit on the machine with vim by:
+    vim scp://gcp//home/aske/
+
+We git clone the course git
+
+We install docker, initially root access is required but we find a work around
+
+We install docker-compose
+
+we navigate to the dockerfolder in the github and run 
+    docker-compose up -d
+
+we want pip install pgcli:
+
+We can map the port to our local machine:
+    through vs code
+    we do 5432 and 8080 and 8888
+    postgres is on 5432 
+    and pgadmin on 8080 
+    jupyter notebook on 8888
+
+We create a database like with docker on our local machine and copy the
+    google credentials with sftp
+
+We export the google credentials variable:
+    export GOOGLE_APPLICATION_CREDENTIALS=~/keys/my-creds.json
+
+And then we can do:
+    gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
