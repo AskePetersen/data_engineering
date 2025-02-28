@@ -17,7 +17,6 @@
         docker run   --network=export_default   SOME_NAME     --user=root     --password=root     --host=pgdatabase     --port=5432     --db=ny_taxi     --table_name=yellow_taxi_trips     --url=${URL}
         ```
 
-
 ### To do pgcli:
     ```
     pgcli -h localhost -p 5432 -u root -d ny_taxi
