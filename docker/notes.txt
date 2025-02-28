@@ -1,0 +1,16 @@
+
+_____________________________
+
+Pay attention to:
+    you dont use -it in the docker run command, probably because we use git bash
+    host is pgdatabase
+    In the run script we use port 5432
+    You might have to change the network. It's typically called the same as your
+        folder. run 'docker network ls' to get the available networks
+    Remember to be connected to the network.
+    pgadmin is at localhost:8080
+    There are multiple connection between the 'docker run' and 'docker-compose.yaml'
+        script.
+
+To close docker:
+    docker-compose down -- You have to be in the correct folder

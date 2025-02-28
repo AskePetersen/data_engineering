@@ -43,3 +43,12 @@ We export the google credentials variable:
 
 And then we can do:
     gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+
+And then we just setup terraform with google up as we did locally
+    terraform init, plan, apply, destroy
+
+We can stop the VM such that we don't get charged by google
+    sudo shutdown now 
+
+But we can start it again if we want to from the google site
+
