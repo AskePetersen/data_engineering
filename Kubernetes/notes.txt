@@ -1,0 +1,7 @@
+A Pod is a group of one or more containers like docker containers 
+
+We have 
+    Cluster
+    Node
+    Pod
+    pod agents

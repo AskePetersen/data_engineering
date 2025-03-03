@@ -1,0 +1,66 @@
+We installed kubernetes
+
+We start a cluster by:
+    minikube start --driver=docker
+
+We install kubectl by:
+    minikube kubectl -- get po -A
+
+We can view the dashboard by:
+    minikube dashboard
+
+We can create a webserver by:
+    kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
+
+Then we can view the deployment by:
+    kubectl get deployments
+
+We can view the pods by:
+    kubectl get pods
+
+We can view cluster events:
+    kubectl get events
+
+We can view the logs from a container where NAME is the name of the desired note
+from kubectl get pods:
+    kubectl logs NAME
+
+We can expose a pod to the public internet using
+    kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+
+We can view our services by:
+    kubectl get services
+
+To open up a browser window that serves my app do:
+    minikube service hello-node
+
+Currently supported addons can be shown by:
+    minikube addons list
+
+One can enable addons with:
+    minikube addons enable metrics-server
+
+We can view the pod and service we created by installing that addon:
+    kubectl get pod,svc -n kube-system
+
+We can get output from the metrics-server:
+    kubectl top pods
+
+We can disable an addon by:
+    minikube addons disable metrics-server
+
+We can delete a service by:
+    kubectl delete service hello-node
+    kubectl delete deployment hello-node
+
+We can stop or delete the cluster by:
+    minikube stop
+    minikube delete
+
+We can access our pod where POD_NAME can be found by the get pods command:
+    curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME:8080/proxy/
+
+We can execute a command on a container in a pod with:
+    kubectl exec
+
+
