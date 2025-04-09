@@ -5,3 +5,8 @@ We have
     Node
     Pod
     pod agents
+
+We are able to run multiple instances of our app with kubectl. This is the way
+of scaling
+
+We are able to update all of the apps after they've been scaled up.

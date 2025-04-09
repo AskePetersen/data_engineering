@@ -63,4 +63,17 @@ We can access our pod where POD_NAME can be found by the get pods command:
 We can execute a command on a container in a pod with:
     kubectl exec
 
+We can get a bash by:
+    kubectl exec -ti $POD_NAME -- bash
+
+To show the app in the terminal:
+    kubectl proxy
+
+We can get the output from an exposed app by:
+    export NODE_PORT="$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}')"
+    curl http://"$(minikube ip):$NODE_PORT"
+
+We can scale the deployment by:
+    kubectl scale deployments/kubernetes-bootcamp --replicas=4
+
 

@@ -1,0 +1,13 @@
+with tmp_extreme as (
+	select 
+		month
+	from monthly_temperatures
+	where avg_temperature = (select min(avg_temperature) from monthly_temperatures)
+	or avg_temperature = (select max(avg_temperature) from monthly_temperatures)
+)
+select extract(month from h.date), shape, avg(average_completion_time) from honeycomb_game as h
+where extract(month from h.date) in 
+	(select month from tmp_extreme)
+and h.date > '01/01/2005'
+group by shape, extract(month from h.date)
+order by avg

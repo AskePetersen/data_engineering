@@ -1,0 +1,4 @@
+Loop through entire map.
+    whenever we find a char add its position to dictionary with key that char
+    and generate #'s with regards to all previous found chars.
+    remember to check if it goes out of bounds.

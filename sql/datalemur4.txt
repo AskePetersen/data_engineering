@@ -1,0 +1,12 @@
+select 
+	team_id,
+	avg(age),
+case
+	when avg(age) < 40 then 'Fit'
+	when avg(age) >= 40 and avg(age) <= 50 then 'Grizzled'
+	else 'Elderly'
+end as category,
+rank () over (order by avg(age) desc) as rank_no
+from player
+group by team_id
+having count(team_id) = 10
