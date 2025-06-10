@@ -1,0 +1,11 @@
+select
+	eq.game_type,
+	sup.name,
+	floor(avg(failure_date - installation_date) / 365.2425) as avg_lifespan
+from failure_incidents
+join equipment eq on failed_equipment_id = supplier_id
+join suppliers sup on sup.id = eq.supplier_id
+where eq.game_type = 'red light green light'
+group by sup.name, eq.game_type
+order by count(*) desc
+limit 1 

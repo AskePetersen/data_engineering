@@ -1,0 +1,6 @@
+One can get dags by:
+	airflow dags list
+
+We import DAG in python by
+	from airflow import DAG
+
